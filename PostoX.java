@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class PostoX extends SQLiteOpenHelper {
     // Database Info
     private static final String DATABASE_NAME = "PostoX";
-    private static final int DATABASE_VERSION = 4   ;
+    private static final int DATABASE_VERSION = 5   ;
 
     //Table Names
     private static final String TABLE_Vacina = "Vacina";
@@ -49,7 +49,7 @@ public class PostoX extends SQLiteOpenHelper {
         String TABLE_CREATE2 = "create table Vacinados"+
                 "(numVacinado integer primary key autoincrement,"+
                 "nomeP text not null, cpf text not null, idade integer not null,"+
-                "vacinaId integer not null, foreign key(vacinaId) references Vacina(vacinaId));";
+                "vacid integer not null, foreign key(vacid) references Vacina(vacinaId));";
         db.execSQL(TABLE_CREATE1);
         db.execSQL(TABLE_CREATE2);
     }
